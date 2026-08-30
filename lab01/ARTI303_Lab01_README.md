@@ -1,5 +1,5 @@
 # Lab 1 — Building Your AI Development Environment
-**ARTI 303 — Programming for AI** · Week 1 of 16 · Not graded, but required
+**ARTI 303 — Programming for AI** · Week 1
 
 ## What's in this folder
 - `README.md` — this file: setup, workflow, submission
@@ -11,15 +11,12 @@
 - Learn the branch → commit → push → pull-request workflow used every week from now on
 - Work through `lab01.ipynb`: variables, data types, operators, string formatting, and an AI-assisted coding checkpoint
 
-This lab isn't graded, but **Lab 2 assumes the repository you build today already exists and works.** Skip a step here and you won't feel it today — you'll feel it in three weeks, when it's harder to fix.
-
 Every lab this semester follows the same five stages: **Recall → Guided walkthrough → Your own work → AI checkpoint → Commit and log.** This week is the one exception — there's no previous week to recall, and "setup" means installing tools rather than syncing an existing repo. From Lab 2 onward, the standard rhythm applies every week.
 
 ## Before you start
 - Windows 10/11, macOS, or Linux — or a department lab machine (ask your instructor if Python/VS Code/Git are already installed)
-- A personal email you'll still control after graduation, for GitHub + Kaggle
+- An email, for GitHub + Kaggle
 - About 90 minutes from scratch, ~30 if the tools below are already installed
-- No admin rights on your machine? Use the Colab path in Step 8 instead, and tell your instructor now, not at the end
 
 ---
 
@@ -68,7 +65,7 @@ python -m pip install notebook ipykernel
    git clone https://github.com/<your-username>/arti303-<your-id>-<lastname>.git
    ```
 
-**Step 10 — Kaggle account.** Not needed until Week 5, but set it up now: create a free account at [kaggle.com](https://kaggle.com), then Account Settings → **Create New API Token** (downloads `kaggle.json`). **Don't commit this file** — Part A below `.gitignore`s it before it can be created.
+**Step 10 — Kaggle account.** Not needed until Week 5, but set it up now: create a free account at [kaggle.com](https://kaggle.com).
 
 ---
 
@@ -149,26 +146,6 @@ Open a pull request `lab01 → main` on GitHub, then paste the PR link where you
 
 ---
 
-## Troubleshooting
-
-| Symptom | Fix |
-|---|---|
-| `touch` not recognized (Windows) | You're in PowerShell, not Git Bash — see Step 4 |
-| `'python' is not recognized` (Windows) | PATH wasn't set during install — rerun installer, tick the box, restart VS Code |
-| `zsh: command not found: python` (macOS) | Use `python3` instead, everywhere |
-| `pip: command not found` | Use `python -m pip install ...` instead |
-| Folders created but not in your repo | Terminal was in the wrong place — run `pwd`, `cd` into your repo, redo Step 2 |
-| `.gitignore` missing from `ls` | Expected — dot-files are hidden. Use `ls -a` |
-| "Please tell me who you are" on commit | Skipped Step 6 — run the two `git config` commands |
-| "Support for password authentication was removed" | GitHub needs a Personal Access Token, not your password (Settings → Developer settings → Personal access tokens), or use SSH |
-| Accidentally committed `kaggle.json` | Tell your instructor, then regenerate the token on Kaggle immediately — treat the old one as compromised |
-| VS Code: "No kernel found" | `Ctrl+Shift+P` → *Python: Select Interpreter* → your 3.12 install, then *Notebook: Select Kernel* |
-| Kernel keeps dying | `python -m pip install ipykernel`, then reselect the kernel |
-| Colab can't find your file | Colab can't see your laptop's files — upload via the folder icon, or mount Drive |
-
-Still stuck after five minutes? Ask your instructor — don't spend the whole session on an environment problem.
-
----
 
 ## Sources
 
@@ -176,4 +153,3 @@ Material and specific claims in this lab draw on:
 - [Python documentation](https://docs.python.org) — language reference for Section 3 concepts
 - [GitHub Docs](https://docs.github.com) — repository/authentication workflow, incl. the Personal Access Token requirement
 - [pyreadiness.org](https://pyreadiness.org) — checked Aug 2026 to confirm current library support before recommending Python 3.12 over 3.14
-- [Kaggle API documentation](https://www.kaggle.com/docs/api) — account/token setup steps
