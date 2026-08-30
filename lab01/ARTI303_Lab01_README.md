@@ -1,0 +1,179 @@
+# Lab 1 — Building Your AI Development Environment
+**ARTI 303 — Programming for AI** · Week 1 of 16 · Not graded, but required
+
+## What's in this folder
+- `README.md` — this file: setup, workflow, submission
+- `lab01.ipynb` — the actual lab content (Part B and Part C). Open this once your environment is working.
+
+## What you'll do this session
+- Install a Python toolchain (Python, VS Code, Git, Jupyter) with Google Colab as a no-install fallback
+- Create the GitHub repository you'll build on all semester
+- Learn the branch → commit → push → pull-request workflow used every week from now on
+- Work through `lab01.ipynb`: variables, data types, operators, string formatting, and an AI-assisted coding checkpoint
+
+This lab isn't graded, but **Lab 2 assumes the repository you build today already exists and works.** Skip a step here and you won't feel it today — you'll feel it in three weeks, when it's harder to fix.
+
+Every lab this semester follows the same five stages: **Recall → Guided walkthrough → Your own work → AI checkpoint → Commit and log.** This week is the one exception — there's no previous week to recall, and "setup" means installing tools rather than syncing an existing repo. From Lab 2 onward, the standard rhythm applies every week.
+
+## Before you start
+- Windows 10/11, macOS, or Linux — or a department lab machine (ask your instructor if Python/VS Code/Git are already installed)
+- A personal email you'll still control after graduation, for GitHub + Kaggle
+- About 90 minutes from scratch, ~30 if the tools below are already installed
+- No admin rights on your machine? Use the Colab path in Step 8 instead, and tell your instructor now, not at the end
+
+---
+
+## 1 · Install your tools
+
+Work through these **in order** — later steps depend on earlier ones.
+
+**Step 1 — Python.** Install **Python 3.12** from [python.org](https://python.org) — not the newest 3.14. Several data-science and deep-learning libraries used from Week 5 onward support 3.12/3.13 well before they support a brand-new release ([pyreadiness.org](https://pyreadiness.org) tracks this live). **Windows:** tick *"Add python.exe to PATH"* during install — the single most common setup failure.
+
+**Step 2 — VS Code.** Install [VS Code](https://code.visualstudio.com), then install the official **Python** extension (Microsoft) from the Extensions panel.
+
+**Step 3 — Git.** Install from [git-scm.com](https://git-scm.com), default options. On Windows this also installs Git Bash.
+
+**Step 4 — Set up your terminal.** Every command below runs in VS Code's built-in terminal (`View → Terminal`, or `` Ctrl+` ``).
+
+> **Windows — switch to Git Bash.** VS Code defaults to PowerShell, which doesn't understand several commands used this semester. Git Bash does, and behaves like a Mac/Linux terminal — so commands work identically for everyone in the room. In the terminal panel: dropdown arrow next to `+` → *Select Default Profile* → **Git Bash** → reopen the terminal.
+>
+> **macOS/Linux:** nothing to change.
+
+**Step 5 — Find your Python command.**
+```bash
+python --version
+python3 --version
+```
+Note whichever one prints `Python 3.12.x` — use that for the rest of the semester. Neither working? See [Troubleshooting](#troubleshooting).
+
+**Step 6 — Git identity** (attached to every commit you make this semester):
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+**Step 7 — Notebook support:**
+```bash
+python -m pip install notebook ipykernel
+```
+
+**Step 8 — Colab fallback.** Open [Google Colab](https://colab.research.google.com), new notebook, run one cell: `print("Colab is working")`. Keep this tab open all semester as a backup.
+
+**Step 9 — GitHub repo.**
+1. Create a free account at [github.com](https://github.com) if needed.
+2. Create a repo named `arti303-<your-student-id>-<lastname>`, e.g. `arti303-2231045-alharbi`.
+3. Public or private — check with your instructor. If private, add them as a collaborator now.
+4. Clone it:
+   ```bash
+   git clone https://github.com/<your-username>/arti303-<your-id>-<lastname>.git
+   ```
+
+**Step 10 — Kaggle account.** Not needed until Week 5, but set it up now: create a free account at [kaggle.com](https://kaggle.com), then Account Settings → **Create New API Token** (downloads `kaggle.json`). **Don't commit this file** — Part A below `.gitignore`s it before it can be created.
+
+---
+
+## 2 · Build the repository (do this with your instructor)
+
+**Step 1 — Open the repo, confirm where you are.**
+`File → Open Folder` in VS Code → your cloned repo. Open the terminal and run `pwd` — the path must end with your repo name. Wrong folder here means everything below lands in the wrong place.
+
+**Step 2 — Create folders and empty files:**
+```bash
+mkdir src notebooks docs
+touch .gitignore README.md requirements.txt docs/ai-log.md
+ls -a
+```
+`ls -a` (not `ls`) because dot-files are hidden by default.
+
+> **Why the terminal, not File Explorer?** Names starting with a dot — like `.gitignore` — are awkward to create through a GUI; Windows Explorer sometimes refuses the name or silently saves it as `.gitignore.txt`. One `touch` command avoids this. From here the pattern repeats: create the file empty from the terminal, fill it in by clicking it in VS Code.
+
+**Step 3 — Fill in `.gitignore`** (click it, paste, save):
+```
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+kaggle.json
+```
+| Line | Why |
+|---|---|
+| `__pycache__/` | Compiled Python, regenerated every run — pointless to share |
+| `.ipynb_checkpoints/` | Jupyter's autosave copies — noise in every commit |
+| `.venv/` | A virtual environment folder — from Week 3, `requirements.txt` describes the same thing in a few lines instead |
+| `kaggle.json` | Your personal API credential — committing it publishes your key |
+
+We write this **before** creating anything else: Git can't un-ignore something it's already tracking, so this ordering means nothing sensitive is ever committed, not even once.
+
+**Step 4 — Fill in `README.md`** (this repo's own, not this file): your name, student ID, section, one sentence of purpose. You'll extend it weekly — by Week 15 it should let someone clone your repo and run your project from the README alone. That's exactly what **Lab Assessment 1 (Week 4)** grades.
+
+**Step 5 — Fill in `requirements.txt`:**
+```
+notebook
+ipykernel
+```
+Check it works: `python -m pip install -r requirements.txt` should complete with no errors.
+
+**Step 6 — First commit:**
+```bash
+git add .
+git commit -m "Initial repository structure for ARTI 303"
+git push -u origin main
+```
+Refresh your repo on GitHub — confirm `kaggle.json` is **not** there.
+
+---
+
+## 3 · Do the lab
+
+Copy `lab01.ipynb` from this folder into your repo's `notebooks/` folder, open it in VS Code, and work through Core → Stretch → Challenge, then the AI checkpoint. Each task has a self-check cell — an `AssertionError` means it isn't done yet. First time running a cell, VS Code will ask for a kernel: pick the Python 3.12 interpreter from Step 1.
+
+**Done when:** every self-check prints "looks correct," and Restart Kernel + Run All completes with no errors.
+
+## 4 · Submit
+
+```bash
+git checkout -b lab01
+git add .
+git commit -m "lab01: environment setup and Python basics"
+git push -u origin lab01
+```
+Open a pull request `lab01 → main` on GitHub, then paste the PR link where your instructor asks for it.
+
+**Checklist**
+- [ ] `src/`, `notebooks/`, `docs/`, `requirements.txt`, `.gitignore`, `README.md` all present
+- [ ] `README.md` has your name, student ID, section
+- [ ] `notebooks/lab01.ipynb` runs top to bottom, all self-checks pass
+- [ ] `docs/ai-log.md` has at least one entry
+- [ ] `kaggle.json` is **not** tracked (`git status` should not show it)
+- [ ] Commit messages describe the change, not "update"
+- [ ] PR opened `lab01 → main`, link submitted
+
+---
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| `touch` not recognized (Windows) | You're in PowerShell, not Git Bash — see Step 4 |
+| `'python' is not recognized` (Windows) | PATH wasn't set during install — rerun installer, tick the box, restart VS Code |
+| `zsh: command not found: python` (macOS) | Use `python3` instead, everywhere |
+| `pip: command not found` | Use `python -m pip install ...` instead |
+| Folders created but not in your repo | Terminal was in the wrong place — run `pwd`, `cd` into your repo, redo Step 2 |
+| `.gitignore` missing from `ls` | Expected — dot-files are hidden. Use `ls -a` |
+| "Please tell me who you are" on commit | Skipped Step 6 — run the two `git config` commands |
+| "Support for password authentication was removed" | GitHub needs a Personal Access Token, not your password (Settings → Developer settings → Personal access tokens), or use SSH |
+| Accidentally committed `kaggle.json` | Tell your instructor, then regenerate the token on Kaggle immediately — treat the old one as compromised |
+| VS Code: "No kernel found" | `Ctrl+Shift+P` → *Python: Select Interpreter* → your 3.12 install, then *Notebook: Select Kernel* |
+| Kernel keeps dying | `python -m pip install ipykernel`, then reselect the kernel |
+| Colab can't find your file | Colab can't see your laptop's files — upload via the folder icon, or mount Drive |
+
+Still stuck after five minutes? Ask your instructor — don't spend the whole session on an environment problem.
+
+---
+
+## Sources
+
+Material and specific claims in this lab draw on:
+- [Python documentation](https://docs.python.org) — language reference for Section 3 concepts
+- [GitHub Docs](https://docs.github.com) — repository/authentication workflow, incl. the Personal Access Token requirement
+- [pyreadiness.org](https://pyreadiness.org) — checked Aug 2026 to confirm current library support before recommending Python 3.12 over 3.14
+- [Kaggle API documentation](https://www.kaggle.com/docs/api) — account/token setup steps
