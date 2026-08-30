@@ -3,7 +3,7 @@
 
 ## What's in this folder
 - `README.md` — this file: setup, workflow, submission
-- `lab01.ipynb` — the actual lab content (Part B and Part C). Open this once your environment is working.
+- [lab01.ipynb](./ARTI303_Lab01_Starter.ipynb) — the actual lab content (Part B and Part C). Open this once your environment is working.
 
 ## What you'll do this session
 - Install a Python toolchain (Python, VS Code, Git, Jupyter) with Google Colab as a no-install fallback
