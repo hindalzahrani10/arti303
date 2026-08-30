@@ -65,7 +65,7 @@ python -m pip install notebook ipykernel
    git clone https://github.com/<your-username>/arti303-<your-id>-<lastname>.git
    ```
 
-**Step 10 — Kaggle account.** Not needed until Week 5, but set it up now: create a free account at [kaggle.com](https://kaggle.com).
+**Step 10 — Kaggle account.** Not needed until Week 5, but set it up now: create a free account at [kaggle.com](https://kaggle.com), then Account Settings → **Create New API Token** (downloads `kaggle.json`). **Don't commit this file** — Part A below `.gitignore`s it before it can be created.
 
 ---
 
