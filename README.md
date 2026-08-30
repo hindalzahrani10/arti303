@@ -1,5 +1,6 @@
 # ARTI 303 — Programming for AI
 **IAU | College of Computer Science and Information Technology**
+
 **Computer Engineering Department**
 
 Lab material for ARTI 303. Each folder contains a `README.md` and a notebook for students.
