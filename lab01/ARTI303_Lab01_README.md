@@ -57,65 +57,15 @@ python -m pip install notebook ipykernel
 **Step 8 — Colab fallback.** Open [Google Colab](https://colab.research.google.com), new notebook, run one cell: `print("Colab is working")`. Keep this tab open all semester as a backup.
 
 **Step 9 — GitHub repo.**
-1. Create a free account at [github.com](https://github.com) if needed.
+1. Create a free account at [github.com](https://github.com).
 2. Create a repo named `arti303-<your-student-id>-<lastname>`, e.g. `arti303-2231045-alharbi`.
-3. Public or private — check with your instructor. If private, add them as a collaborator now.
+3. Make sure it is (((Public))).
 4. Clone it:
    ```bash
    git clone https://github.com/<your-username>/arti303-<your-id>-<lastname>.git
    ```
 
 **Step 10 — Kaggle account.** Not needed until Week 5, but set it up now: create a free account at [kaggle.com](https://kaggle.com), then Account Settings → **Create New API Token** (downloads `kaggle.json`). **Don't commit this file** — Part A below `.gitignore`s it before it can be created.
-
----
-
-## 2 · Build the repository (do this with your instructor)
-
-**Step 1 — Open the repo, confirm where you are.**
-`File → Open Folder` in VS Code → your cloned repo. Open the terminal and run `pwd` — the path must end with your repo name. Wrong folder here means everything below lands in the wrong place.
-
-**Step 2 — Create folders and empty files:**
-```bash
-mkdir src notebooks docs
-touch .gitignore README.md requirements.txt docs/ai-log.md
-ls -a
-```
-`ls -a` (not `ls`) because dot-files are hidden by default.
-
-> **Why the terminal, not File Explorer?** Names starting with a dot — like `.gitignore` — are awkward to create through a GUI; Windows Explorer sometimes refuses the name or silently saves it as `.gitignore.txt`. One `touch` command avoids this. From here the pattern repeats: create the file empty from the terminal, fill it in by clicking it in VS Code.
-
-**Step 3 — Fill in `.gitignore`** (click it, paste, save):
-```
-__pycache__/
-.ipynb_checkpoints/
-.venv/
-kaggle.json
-```
-| Line | Why |
-|---|---|
-| `__pycache__/` | Compiled Python, regenerated every run — pointless to share |
-| `.ipynb_checkpoints/` | Jupyter's autosave copies — noise in every commit |
-| `.venv/` | A virtual environment folder — from Week 3, `requirements.txt` describes the same thing in a few lines instead |
-| `kaggle.json` | Your personal API credential — committing it publishes your key |
-
-We write this **before** creating anything else: Git can't un-ignore something it's already tracking, so this ordering means nothing sensitive is ever committed, not even once.
-
-**Step 4 — Fill in `README.md`** (this repo's own, not this file): your name, student ID, section, one sentence of purpose. You'll extend it weekly — by Week 15 it should let someone clone your repo and run your project from the README alone. That's exactly what **Lab Assessment 1 (Week 4)** grades.
-
-**Step 5 — Fill in `requirements.txt`:**
-```
-notebook
-ipykernel
-```
-Check it works: `python -m pip install -r requirements.txt` should complete with no errors.
-
-**Step 6 — First commit:**
-```bash
-git add .
-git commit -m "Initial repository structure for ARTI 303"
-git push -u origin main
-```
-Refresh your repo on GitHub — confirm `kaggle.json` is **not** there.
 
 ---
 
