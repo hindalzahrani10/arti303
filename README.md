@@ -23,3 +23,7 @@ This lab teaching Python programming in the context of AI development — data h
 ---
 
 Maintained by [hindalzahrani10](https://github.com/hindalzahrani10)
+
+Name: Lara Alalmaei
+Student ID: 2250005629
+Section: AI02
