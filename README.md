@@ -14,7 +14,7 @@ This lab teaching Python programming in the context of AI development — data h
 | Lab | Topic | Week |
 |---|---|---|
 | [lab01](./lab01) | Building Your AI Development Environment | 1 |
-| [lab02](./lab02) | Conditions, Loops, Functions & Your First Module | 2 |
+| [lab02](./lab02) | Python 2 & Your First Module | 2 |
 
 ## How to use this repo
 
