@@ -12,7 +12,7 @@ The goal of this assignment is to compare **Pandas** with another Python data-pr
 |---|---|---|
 | Member 1 | XXXXXXXX | Leader |
 | Member 2 | XXXXXXXX | Member |
-| Member 3 | XXXXXXXX | Member |
+| deema alfahmi | 2250002949 | Section 4.4 - Pandas vs Polars |
 | Member 4 | XXXXXXXX | Member |
 | Member 5 | XXXXXXXX | Member |
 | Member 6 | XXXXXXXX | XXX |
