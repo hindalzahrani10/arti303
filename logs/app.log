@@ -1,0 +1,6 @@
+2026-09-12 15:36:32,049 | INFO     | Logger ready
+2026-09-12 15:36:32,050 | WARNING  | This is what a warning looks like
+2026-09-12 15:36:49,700 | WARNING  | Skipped row with unreadable GPA: 'Faisal Alharbi,N/A'
+2026-09-12 15:36:49,701 | WARNING  | Skipped row with unreadable GPA: 'Omar Alshehri,'
+2026-09-12 15:36:49,702 | INFO     | Loaded 3 students from data/students_messy.csv (2 skipped)
+2026-09-12 15:36:53,954 | ERROR    | File not found: data/nope.csv
