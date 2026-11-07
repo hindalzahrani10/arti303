@@ -20,7 +20,9 @@ This lab teaching Python programming in the context of AI development — data h
 | [lab05](lab05.ipynb) | Data Engineering with Pandas | 5 |
 | [lab06](lab06.ipynb) | Data Visualization & EDA | 6 |
 | [lab07](lab07.ipynb) | Data Preprocessing | 7 |
-<!--| [lab08](lab08.ipynb) | Programming with AI Frameworks | 8 | -->
+| [lab08](lab08.ipynb) | Programming with AI Frameworks | 8 |
+| [lab09](lab09.ipynb) | Computing, Serialization, Autograd & Memory | 9 |
+
 <!--| [lab09](lab09.ipynb) | Computer Vision Programming | 9 | -->
 <!--| [lab10](lab10.ipynb) | Natural Language Programming | 10 | -->
 <!--| [lab11](lab11.ipynb) | Programming with Sequential Data | 11 | -->
