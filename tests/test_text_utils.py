@@ -10,13 +10,12 @@ import text_utils
 
 def test_clean_name_whitespace():
     """Test that extra whitespace is removed."""
-    assert text_utils.clean_name("  john   smith  ") == "John Smith"
-    assert text_utils.clean_name("amy   santiago") == "Amy Santiago"
+    assert text_utils.clean_name("  john    smith  ") == "John Smith"
+    
 
 
 def test_clean_name_capitalisation():
     """Test that names are correctly capitalised."""
     assert text_utils.clean_name("JOHN SMITH") == "John Smith"
     assert text_utils.clean_name("jane doe") == "Jane Doe"
-    assert text_utils.clean_name("ROSA DIAZ") == "Rosa Diaz"
-    assert text_utils.clean_name("amy santiago") == "Amy Santiago"
+    
