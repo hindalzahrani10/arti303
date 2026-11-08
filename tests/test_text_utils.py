@@ -1,4 +1,4 @@
-"""Tests for src/text_utils.py"""
+"""Tests for src/text_utils.py."""
 import sys
 import os
 
